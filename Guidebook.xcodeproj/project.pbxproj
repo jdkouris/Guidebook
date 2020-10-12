@@ -24,6 +24,7 @@
 		296004D62534AF5A00973F45 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */; };
 		296004D72534AF5A00973F45 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */; };
 		296004DA2534AFF800973F45 /* PreloadedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 296004D92534AFF800973F45 /* PreloadedData.json */; };
+		296004DE2534D2EA00973F45 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004DD2534D2EA00973F45 /* PlaceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		296004D92534AFF800973F45 /* PreloadedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreloadedData.json; sourceTree = "<group>"; };
+		296004DD2534D2EA00973F45 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		296004B42534A91400973F45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				296004DD2534D2EA00973F45 /* PlaceTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				2960049C2534A8F800973F45 /* AppDelegate.swift in Sources */,
 				2960049E2534A8F800973F45 /* SceneDelegate.swift in Sources */,
 				296004BA2534AA2600973F45 /* PlaceViewController.swift in Sources */,
+				296004DE2534D2EA00973F45 /* PlaceTableViewCell.swift in Sources */,
 				296004D72534AF5A00973F45 /* Note+CoreDataProperties.swift in Sources */,
 				296004C32534AC0100973F45 /* NotesViewController.swift in Sources */,
 				296004BD2534ABF100973F45 /* InfoViewController.swift in Sources */,
