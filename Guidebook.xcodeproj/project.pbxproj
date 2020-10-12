@@ -23,6 +23,7 @@
 		296004D52534AF5A00973F45 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D12534AF5A00973F45 /* Place+CoreDataProperties.swift */; };
 		296004D62534AF5A00973F45 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */; };
 		296004D72534AF5A00973F45 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */; };
+		296004DA2534AFF800973F45 /* PreloadedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 296004D92534AFF800973F45 /* PreloadedData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		296004D12534AF5A00973F45 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		296004D92534AFF800973F45 /* PreloadedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreloadedData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		296004B72534A94E00973F45 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				296004D92534AFF800973F45 /* PreloadedData.json */,
 				296004A42534A8F800973F45 /* Guidebook.xcdatamodeld */,
 			);
 			path = Data;
@@ -202,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296004DA2534AFF800973F45 /* PreloadedData.json in Resources */,
 				296004AB2534A8F800973F45 /* LaunchScreen.storyboard in Resources */,
 				296004A82534A8F800973F45 /* Assets.xcassets in Resources */,
 				296004A32534A8F800973F45 /* Main.storyboard in Resources */,
