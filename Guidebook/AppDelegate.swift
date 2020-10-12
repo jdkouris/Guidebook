@@ -15,10 +15,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // preload data if needed
+        preloadData()
+        
         return true
     }
+    
+    // MARK: - Preload Data
+    
+    private func preloadData() {
+        // Reference to user defaults
+        let defaults = UserDefaults.standard
+        
+        // Reference to Core Data Context
+        let context = persistentContainer.viewContext
+        
+        // Check if this is the first launch
+        if defaults.bool(forKey: Constants.PRELOAD_DATA) == false {
+            // If so, then parse the json file into Core Data
+            // Get a path to the local json file
+            guard let path = Bundle.main.path(forResource: "PreloadedData", ofType: "json") else { return }
+            
+            // Create a URL to it
+            let url = URL(fileURLWithPath: path)
+            
+            // Get the data for the file
+            do {
+                let data = try Data(contentsOf: url)
+                
+                // Try turning the data into a json object
+                let jsonArray = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String:Any]]
+                
+                // Loop through the json objects
+                for dict in jsonArray {
+                    // Create a Place object and populate properties
+                    let place = Place(context: context)
+                    place.name = dict["name"] as? String
+                    place.imageName = dict["imagename"] as? String
+                    place.address = dict["address"] as? String
+                    place.summary = dict["summary"] as? String
+                    place.lat = dict["lat"] as! Double
+                    place.long = dict["long"] as! Double
+                }
+            } catch {
+                print("Couldn't load data")
+            }
+            
+            // Save the data
+            self.saveContext()
+            
+            // Set the preload data flag to true
+            defaults.set(true, forKey: Constants.PRELOAD_DATA)
+        }
+        
+    }
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: - UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
