@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2960049C2534A8F800973F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960049B2534A8F800973F45 /* AppDelegate.swift */; };
 		2960049E2534A8F800973F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960049D2534A8F800973F45 /* SceneDelegate.swift */; };
-		296004A02534A8F800973F45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960049F2534A8F800973F45 /* ViewController.swift */; };
 		296004A32534A8F800973F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296004A12534A8F800973F45 /* Main.storyboard */; };
 		296004A62534A8F800973F45 /* Guidebook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 296004A42534A8F800973F45 /* Guidebook.xcdatamodeld */; };
 		296004A82534A8F800973F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296004A72534A8F800973F45 /* Assets.xcassets */; };
@@ -19,13 +18,13 @@
 		296004C02534ABFA00973F45 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004BF2534ABFA00973F45 /* MapViewController.swift */; };
 		296004C32534AC0100973F45 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004C22534AC0100973F45 /* NotesViewController.swift */; };
 		296004C72534AC8000973F45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004C62534AC8000973F45 /* Constants.swift */; };
+		296004CD2534ADC100973F45 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004CC2534ADC000973F45 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		296004982534A8F800973F45 /* Guidebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2960049B2534A8F800973F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2960049D2534A8F800973F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2960049F2534A8F800973F45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		296004A22534A8F800973F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		296004A52534A8F800973F45 /* Guidebook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidebook.xcdatamodel; sourceTree = "<group>"; };
 		296004A72534A8F800973F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		296004BF2534ABFA00973F45 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		296004C22534AC0100973F45 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		296004C62534AC8000973F45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		296004CC2534ADC000973F45 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		296004B32534A90300973F45 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2960049F2534A8F800973F45 /* ViewController.swift */,
+				296004CC2534ADC000973F45 /* LocationViewController.swift */,
 				296004B92534AA2600973F45 /* PlaceViewController.swift */,
 				296004BC2534ABF100973F45 /* InfoViewController.swift */,
 				296004BF2534ABFA00973F45 /* MapViewController.swift */,
@@ -203,13 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296004A02534A8F800973F45 /* ViewController.swift in Sources */,
 				2960049C2534A8F800973F45 /* AppDelegate.swift in Sources */,
 				2960049E2534A8F800973F45 /* SceneDelegate.swift in Sources */,
 				296004BA2534AA2600973F45 /* PlaceViewController.swift in Sources */,
 				296004C32534AC0100973F45 /* NotesViewController.swift in Sources */,
 				296004BD2534ABF100973F45 /* InfoViewController.swift in Sources */,
 				296004A62534A8F800973F45 /* Guidebook.xcdatamodeld in Sources */,
+				296004CD2534ADC100973F45 /* LocationViewController.swift in Sources */,
 				296004C02534ABFA00973F45 /* MapViewController.swift in Sources */,
 				296004C72534AC8000973F45 /* Constants.swift in Sources */,
 			);
