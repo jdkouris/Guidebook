@@ -34,6 +34,22 @@ class LocationViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Double check that a row was selected
+        if tableView.indexPathForSelectedRow == nil {
+            return
+        }
+        
+        // Get the selected place
+        let selectedPlace = self.places[tableView.indexPathForSelectedRow!.row]
+        
+        // Get a reference to the place view controller
+        let placeVC = segue.destination as! PlaceViewController
+        
+        // Set the place property
+        placeVC.place = selectedPlace
+    }
+    
 }
 
 extension LocationViewController: UITableViewDataSource, UITableViewDelegate {
