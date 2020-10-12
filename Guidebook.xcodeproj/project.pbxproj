@@ -19,6 +19,10 @@
 		296004C32534AC0100973F45 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004C22534AC0100973F45 /* NotesViewController.swift */; };
 		296004C72534AC8000973F45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004C62534AC8000973F45 /* Constants.swift */; };
 		296004CD2534ADC100973F45 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004CC2534ADC000973F45 /* LocationViewController.swift */; };
+		296004D42534AF5A00973F45 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D02534AF5A00973F45 /* Place+CoreDataClass.swift */; };
+		296004D52534AF5A00973F45 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D12534AF5A00973F45 /* Place+CoreDataProperties.swift */; };
+		296004D62534AF5A00973F45 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */; };
+		296004D72534AF5A00973F45 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		296004C22534AC0100973F45 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		296004C62534AC8000973F45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296004CC2534ADC000973F45 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		296004D02534AF5A00973F45 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		296004D12534AF5A00973F45 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +86,6 @@
 				296004C52534AC6800973F45 /* Helpers */,
 				296004A72534A8F800973F45 /* Assets.xcassets */,
 				296004AC2534A8F800973F45 /* Info.plist */,
-				296004A42534A8F800973F45 /* Guidebook.xcdatamodeld */,
 			);
 			path = Guidebook;
 			sourceTree = "<group>";
@@ -105,6 +112,10 @@
 		296004B52534A91900973F45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				296004D02534AF5A00973F45 /* Place+CoreDataClass.swift */,
+				296004D12534AF5A00973F45 /* Place+CoreDataProperties.swift */,
+				296004D22534AF5A00973F45 /* Note+CoreDataClass.swift */,
+				296004D32534AF5A00973F45 /* Note+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 		296004B72534A94E00973F45 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				296004A42534A8F800973F45 /* Guidebook.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -206,10 +218,14 @@
 				2960049C2534A8F800973F45 /* AppDelegate.swift in Sources */,
 				2960049E2534A8F800973F45 /* SceneDelegate.swift in Sources */,
 				296004BA2534AA2600973F45 /* PlaceViewController.swift in Sources */,
+				296004D72534AF5A00973F45 /* Note+CoreDataProperties.swift in Sources */,
 				296004C32534AC0100973F45 /* NotesViewController.swift in Sources */,
 				296004BD2534ABF100973F45 /* InfoViewController.swift in Sources */,
+				296004D52534AF5A00973F45 /* Place+CoreDataProperties.swift in Sources */,
+				296004D42534AF5A00973F45 /* Place+CoreDataClass.swift in Sources */,
 				296004A62534A8F800973F45 /* Guidebook.xcdatamodeld in Sources */,
 				296004CD2534ADC100973F45 /* LocationViewController.swift in Sources */,
+				296004D62534AF5A00973F45 /* Note+CoreDataClass.swift in Sources */,
 				296004C02534ABFA00973F45 /* MapViewController.swift in Sources */,
 				296004C72534AC8000973F45 /* Constants.swift in Sources */,
 			);
