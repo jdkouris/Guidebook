@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20A4299v" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20A5323l" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Note" representedClassName="Note" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="notes" inverseEntity="Place"/>
     </entity>
     <entity name="Place" representedClassName="Place" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
@@ -11,9 +12,10 @@
         <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="summary" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="place" inverseEntity="Note"/>
     </entity>
     <elements>
-        <element name="Place" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="Note" positionX="-54" positionY="36" width="128" height="59"/>
+        <element name="Note" positionX="-54" positionY="36" width="128" height="74"/>
+        <element name="Place" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

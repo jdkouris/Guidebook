@@ -2,7 +2,7 @@
 //  Note+CoreDataClass.swift
 //  Guidebook
 //
-//  Created by John Kouris on 10/12/20.
+//  Created by John Kouris on 10/14/20.
 //
 //
 
