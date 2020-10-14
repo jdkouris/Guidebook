@@ -30,13 +30,10 @@ class PlaceViewController: UIViewController {
     
     var place: Place?
     
-    
     // MARK: - ViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,9 +47,8 @@ class PlaceViewController: UIViewController {
         // Set the name
         placeNameLabel.text = place.name
         
-        // Create an instance of the info view controller
-        switchChildViewControllers(infoViewController)
-        
+        // Make sure the first segment is displayed
+        segmentChanged(self.segmentedControl)
     }
     
     // MARK: - Methods
@@ -72,16 +68,19 @@ class PlaceViewController: UIViewController {
         childVC.didMove(toParent: self)
     }
     
-    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            infoViewController.place = self.place
             switchChildViewControllers(infoViewController)
         case 1:
+            mapViewController.place = self.place
             switchChildViewControllers(mapViewController)
         case 2:
+            notesViewController.place = self.place
             switchChildViewControllers(notesViewController)
         default:
+            infoViewController.place = self.place
             switchChildViewControllers(infoViewController)
         }
     }

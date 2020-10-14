@@ -205,6 +205,9 @@
                             <constraint firstItem="chU-GZ-pNY" firstAttribute="top" secondItem="W4A-RG-8Vg" secondAttribute="top" constant="20" id="aOt-TM-Vqc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="summaryLabel" destination="chU-GZ-pNY" id="JMA-DX-scl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nve-Uf-XTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,6 +234,9 @@
                             <constraint firstItem="Xhx-TU-iXx" firstAttribute="top" secondItem="5Ff-K3-bf7" secondAttribute="top" id="tYe-S3-Hla"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Xhx-TU-iXx" id="3ah-EL-eZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfQ-hw-x8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
