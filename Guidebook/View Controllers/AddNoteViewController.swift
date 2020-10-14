@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+protocol AddNoteDelegate {
+    func noteAdded()
+}
+
 class AddNoteViewController: UIViewController {
     
     // MARK: - Properties and Variables
@@ -18,6 +22,7 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     var place: Place?
+    var delegate: AddNoteDelegate?
     
     // MARK: - ViewController lifecycle
 
@@ -52,6 +57,9 @@ class AddNoteViewController: UIViewController {
         
         // save the cd context
         appDelegate.saveContext()
+        
+        // let the delegate know that the note was added
+        delegate?.noteAdded()
         
         // dismiss the popup
         dismiss(animated: true, completion: nil)
