@@ -18,6 +18,7 @@ class NotesViewController: UIViewController {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var fetchedNotesRC: NSFetchedResultsController<Note>?
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK: - ViewController lifecycle
 
@@ -60,7 +61,9 @@ class NotesViewController: UIViewController {
         }
         
         // refresh the table view
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func addNoteTapped(_ sender: Any) {
@@ -99,10 +102,29 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         guard let note = fetchedNotesRC?.object(at: indexPath) else { return UITableViewCell() }
         
         // set the content of the labels
-        dateLabel.text = "June 22, 2020"
+        let df = DateFormatter()
+        df.dateFormat = "MMM d, yyyy - h:mm a"
+        
+        dateLabel.text = df.string(from: note.date!)
         noteLabel.text = note.text
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // get a reference to the note that is to be deleted
+            guard let note = self.fetchedNotesRC?.object(at: indexPath) else { return }
+            
+            // delete the note from the context
+            self.context.delete(note)
+            
+            // save the context
+            self.appDelegate.saveContext()
+            
+            // reload the table view
+            self.refresh()
+        }
     }
     
 }
