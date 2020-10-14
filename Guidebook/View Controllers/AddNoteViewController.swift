@@ -23,11 +23,16 @@ class AddNoteViewController: UIViewController {
     
     var place: Place?
     var delegate: AddNoteDelegate?
+    var note: Note?
     
     // MARK: - ViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if note != nil {
+            textView.text = note?.text
+        }
         
         cardView.layer.cornerRadius = 5
         cardView.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -47,13 +52,21 @@ class AddNoteViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        // create a new note
-        let note = Note(context: context)
-        
-        // configure the properties
-        note.date = Date()
-        note.text = textView.text ?? ""
-        note.place = place
+        // create a new note if one doesn't already exist
+        if note == nil {
+            self.note = Note(context: context)
+            
+            // configure the properties
+            note!.date = Date()
+            note!.text = textView.text ?? ""
+            note!.place = place
+            
+        } else {
+            // update an existing note
+            note?.date = Date()
+            note?.text = textView.text
+            note?.place = place
+        }
         
         // save the cd context
         appDelegate.saveContext()

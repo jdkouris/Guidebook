@@ -111,6 +111,30 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let note = self.fetchedNotesRC?.object(at: indexPath) else { return }
+        
+        // display the popup
+        let addNoteVC = storyboard?.instantiateViewController(identifier: Constants.ADDNOTE_VIEWCONTROLLER) as! AddNoteViewController
+        
+        // pass the selected note
+        addNoteVC.note = note
+        
+        // set self as AddNoteDelegate to be notified of new notes
+        addNoteVC.delegate = self
+        
+        // pass the place object through
+        addNoteVC.place = place
+        
+        // configure the popup mode
+        addNoteVC.modalPresentationStyle = .automatic
+        
+        // present it
+        present(addNoteVC, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // get a reference to the note that is to be deleted
