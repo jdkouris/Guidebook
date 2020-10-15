@@ -108,13 +108,14 @@
                             <constraint firstItem="riH-MI-Hox" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iyN-rp-iYg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6nQ-ya-Jgh"/>
                     <connections>
                         <outlet property="tableView" destination="riH-MI-Hox" id="YZR-Ey-xod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
         <!--Place View Controller-->
         <scene sceneID="QcH-aC-BZK">
@@ -180,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4S1-w7-xh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="138"/>
+            <point key="canvasLocation" x="1847.826086956522" y="137.94642857142856"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="vOk-Uf-Vip">
@@ -211,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nve-Uf-XTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="138"/>
+            <point key="canvasLocation" x="2615.9420289855075" y="137.94642857142856"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="SGc-aA-eUs">
@@ -240,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfQ-hw-x8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2443" y="138"/>
+            <point key="canvasLocation" x="3352.1739130434785" y="137.94642857142856"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="Gol-Zu-Jgz">
@@ -254,7 +255,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ul-cC-tes">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" id="bbV-Zc-D9U">
@@ -292,16 +293,6 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Ce-7df">
-                                        <rect key="frame" x="0.0" y="768" width="414" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="mjz-3A-jn1"/>
-                                        </constraints>
-                                        <state key="normal" title="Add Note"/>
-                                        <connections>
-                                            <action selector="addNoteTapped:" destination="utl-uo-2Nz" eventType="touchUpInside" id="Lh7-9u-ufF"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -320,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lz8-J7-8T0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3175" y="138"/>
+            <point key="canvasLocation" x="4084.057971014493" y="137.94642857142856"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="NTq-MQ-piq">
@@ -334,30 +325,33 @@
                                 <rect key="frame" x="40" y="84" width="334" height="378"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="stl-my-tIQ">
-                                        <rect key="frame" x="20" y="20" width="294" height="358"/>
+                                        <rect key="frame" x="20" y="20" width="294" height="338"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AEB-lj-G4D">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="308"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="288"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-Nu-plT">
-                                                <rect key="frame" x="0.0" y="308" width="294" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-Nu-plT">
+                                                <rect key="frame" x="0.0" y="288" width="294" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNy-EC-2Zz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="b5l-If-GOD"/>
                                                         </constraints>
-                                                        <state key="normal" title="Cancel"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="cancelButtonTapped:" destination="qLJ-Zu-7pS" eventType="touchUpInside" id="EUH-rx-NOY"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTw-qR-7KZ">
-                                                        <rect key="frame" x="147" y="0.0" width="147" height="50"/>
+                                                        <rect key="frame" x="157" y="0.0" width="137" height="50"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="Save"/>
                                                         <connections>
                                                             <action selector="saveButtonTapped:" destination="qLJ-Zu-7pS" eventType="touchUpInside" id="w7m-5Y-zd3"/>
@@ -371,7 +365,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="stl-my-tIQ" firstAttribute="top" secondItem="mkm-XF-HMg" secondAttribute="top" constant="20" id="Gf4-K0-sZb"/>
-                                    <constraint firstAttribute="bottom" secondItem="stl-my-tIQ" secondAttribute="bottom" id="Gnz-eO-YA0"/>
+                                    <constraint firstAttribute="bottom" secondItem="stl-my-tIQ" secondAttribute="bottom" constant="20" id="Gnz-eO-YA0"/>
                                     <constraint firstAttribute="trailing" secondItem="stl-my-tIQ" secondAttribute="trailing" constant="20" id="Ppo-Bd-T0s"/>
                                     <constraint firstItem="stl-my-tIQ" firstAttribute="leading" secondItem="mkm-XF-HMg" secondAttribute="leading" constant="20" id="Zpp-SD-oZI"/>
                                 </constraints>
@@ -387,13 +381,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="aNy-EC-2Zz" id="KIZ-Dp-eOf"/>
                         <outlet property="cardView" destination="mkm-XF-HMg" id="JcB-h5-YvC"/>
+                        <outlet property="saveButton" destination="PTw-qR-7KZ" id="BTn-JK-Z3i"/>
                         <outlet property="textView" destination="AEB-lj-G4D" id="Xvl-q6-0he"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsy-Eh-7y6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3907" y="138"/>
+            <point key="canvasLocation" x="4815.9420289855079" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -405,6 +401,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

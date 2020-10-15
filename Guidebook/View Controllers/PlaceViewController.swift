@@ -16,6 +16,8 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var containerView: UIView!
     
+    let dismissButton = UIButton()
+    
     lazy var infoViewController: InfoViewController = {
         return self.storyboard?.instantiateViewController(identifier: Constants.INFO_VIEWCONTROLLER) as! InfoViewController
     }()
@@ -34,6 +36,7 @@ class PlaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureDismissButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +55,31 @@ class PlaceViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func configureDismissButton() {
+        view.addSubview(dismissButton)
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        dismissButton.setTitle("Close", for: .normal)
+        
+        dismissButton.setTitleColor(.white, for: .normal)
+        dismissButton.layer.borderWidth = 2
+        dismissButton.layer.borderColor = UIColor.white.cgColor
+        dismissButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+        dismissButton.layer.cornerRadius = 20
+        
+        dismissButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            dismissButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            dismissButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            dismissButton.widthAnchor.constraint(equalToConstant: 80),
+            dismissButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    @objc private func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
     
     private func switchChildViewControllers(_ childVC: UIViewController) {
         // Add it as a child view controller of this one

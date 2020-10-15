@@ -14,6 +14,8 @@ class NotesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let addNoteButton = UIButton()
+    
     var place: Place?
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,6 +30,8 @@ class NotesViewController: UIViewController {
         // set table view delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
+        configureAddNoteButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +41,44 @@ class NotesViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func configureAddNoteButton() {
+        view.addSubview(addNoteButton)
+        addNoteButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
+        addNoteButton.setImage(UIImage(systemName: "pencil", withConfiguration: largeConfig), for: .normal)
+        
+        addNoteButton.tintColor = .white
+        addNoteButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        addNoteButton.layer.cornerRadius = 40
+        
+        addNoteButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addNoteButton.widthAnchor.constraint(equalToConstant: 80),
+            addNoteButton.heightAnchor.constraint(equalToConstant: 80)
+        ])
+    }
+    
+    @objc func addNoteTapped() {
+        // display the popup
+        let addNoteVC = storyboard?.instantiateViewController(identifier: Constants.ADDNOTE_VIEWCONTROLLER) as! AddNoteViewController
+        
+        // set self as AddNoteDelegate to be notified of new notes
+        addNoteVC.delegate = self
+        
+        // pass the place object through
+        addNoteVC.place = place
+        
+        // configure the popup mode
+        addNoteVC.modalPresentationStyle = .automatic
+        
+        // present it
+        present(addNoteVC, animated: true, completion: nil)
+    }
     
     func refresh() {
         // check if there's a place set
@@ -66,24 +108,9 @@ class NotesViewController: UIViewController {
         }
     }
     
-    @IBAction func addNoteTapped(_ sender: Any) {
-        // display the popup
-        let addNoteVC = storyboard?.instantiateViewController(identifier: Constants.ADDNOTE_VIEWCONTROLLER) as! AddNoteViewController
-        
-        // set self as AddNoteDelegate to be notified of new notes
-        addNoteVC.delegate = self
-        
-        // pass the place object through
-        addNoteVC.place = place
-        
-        // configure the popup mode
-        addNoteVC.modalPresentationStyle = .automatic
-        
-        // present it
-        present(addNoteVC, animated: true, completion: nil)
-    }
-    
 }
+
+// MARK: - Extensions
 
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     

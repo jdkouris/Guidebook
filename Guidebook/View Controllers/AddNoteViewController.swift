@@ -20,6 +20,8 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     var place: Place?
     var delegate: AddNoteDelegate?
@@ -30,18 +32,32 @@ class AddNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureViews()
+    }
+    
+    // MARK: - Methods
+    
+    private func configureViews() {
         if note != nil {
             textView.text = note?.text
         }
         
-        cardView.layer.cornerRadius = 5
+        cardView.layer.cornerRadius = 20
         cardView.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         cardView.layer.shadowOpacity = 1
         cardView.layer.shadowOffset = .zero
-        cardView.layer.shadowRadius = 5
+        cardView.layer.shadowRadius = 20
+        
+        cancelButton.layer.borderWidth = 2
+        cancelButton.layer.borderColor = UIColor.red.cgColor
+        cancelButton.layer.cornerRadius = 20
+        
+        saveButton.backgroundColor = .blue
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.layer.cornerRadius = 20
+        
+        textView.becomeFirstResponder()
     }
-    
-    // MARK: - Methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismiss(animated: true, completion: nil)

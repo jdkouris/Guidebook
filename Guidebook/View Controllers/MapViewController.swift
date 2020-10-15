@@ -37,11 +37,14 @@ class MapViewController: UIViewController {
         // Add it to the map
         mapView.addAnnotation(pin)
         
+        // set the map type
+        mapView.mapType = .hybrid
+        
         // Create a region to zoom to
-        let region = MKCoordinateRegion(center: location, latitudinalMeters: 100, longitudinalMeters: 100)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
         
         // Set the region
-        mapView.setRegion(region, animated: false)
+        mapView.setRegion(region, animated: true)
     }
     
 }
