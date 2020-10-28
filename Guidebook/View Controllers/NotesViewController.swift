@@ -110,7 +110,7 @@ class NotesViewController: UIViewController {
     
 }
 
-// MARK: - Extensions
+// MARK: - Extension - Table View
 
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -179,6 +179,8 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+// MARK: - Extension - Add Note Delegate
 
 extension NotesViewController: AddNoteDelegate {
     
